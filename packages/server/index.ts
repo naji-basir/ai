@@ -8,7 +8,11 @@ import dotenv from "dotenv";
 dotenv.config();
 
 app.get("/", (req: Request, res: Response) => {
-  res.send(process.env.OPEN_AI_KEY);
+  res.send("Hello, World!");
+});
+
+app.get("/api/hello", (req: Request, res: Response) => {
+  res.json({ message: "Hello, World" });
 });
 
 app.listen(port, () => {
