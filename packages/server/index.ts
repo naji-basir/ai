@@ -31,6 +31,9 @@ app.post("/api/chat", async (req: Request, res: Response) => {
     const response = await client.chat({
       model: "gpt-oss:120b",
       messages: [{ role: "user", content: prompt }],
+      options: {
+        temperature: 0.4,
+      },
     });
 
     console.log(response);
